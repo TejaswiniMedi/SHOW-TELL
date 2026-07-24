@@ -16,8 +16,6 @@ if [[ ! -d "$DATA/images" ]]; then
   bash "$TRAIN_DIR/download_cub.sh" "$ROOT/data"
 fi
 
-python "$TRAIN_DIR/salf_cub200.py" make-concepts   --data "$DATA" --output "$CONCEPTS" --limit 370
-
 python "$TRAIN_DIR/salf_cub200.py" train-backbone   --data "$DATA" --output "$RUN/backbone" --device "$DEVICE"
 
 python "$TRAIN_DIR/salf_cub200.py" clip-targets   --data "$DATA" --concept-file "$CONCEPTS"   --output "$CACHE/clip_targets_7x7_r32"   --grid 7 --radius 32 --clip-model ViT-B-16   --clip-pretrained openai --device "$DEVICE"
