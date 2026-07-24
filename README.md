@@ -1,3 +1,3 @@
 # SHOW-TELL
 
-# bash train_and_evaluate.sh
+## bash train_and_evaluate.sh
